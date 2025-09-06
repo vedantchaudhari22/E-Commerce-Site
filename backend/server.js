@@ -15,7 +15,7 @@ app.use(bodyParser.json())
 app.use(express.json())
 
 app.use(cors({
-  origin:true,
+  origin:"https://e-commerce-site-frontend-ttiw.onrender.com",
   methods:[ "GET","POST","PUT","DELETE"],
   credentials:true
 }))

@@ -10,7 +10,7 @@ const ProductDetail = () => {
   const { products, filteredData, addToCart } = useContext(AppContext);
     const [product, setProduct] = useState()
     const { id } = useParams()
-    const url = "http://localhost:4000/api"
+    const url = "https://e-commerce-site-backend-2n3o.onrender.com"
 
     useEffect(() => {
         const fetchProduct = async () => {
