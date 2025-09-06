@@ -22,7 +22,7 @@ const AppState = (props) => {
         const fetchProducts = async () => {
             //console.log("Fetching products..."); // Log when fetching products
 
-            const api = await axios.get(`${url}/product/all`, {
+            const api = await axios.get(`${url}/api/product/all`, {
                 headers: {
                     "Content-Type": "Application/json"
                 },
@@ -54,7 +54,7 @@ const AppState = (props) => {
 
     //Register User
     const register = async (name, email, password) => {
-        const api = await axios.post(`${url}/user/register`,
+        const api = await axios.post(`${url}/api/user/register`,
             {
                 name, email, password
             },
@@ -82,7 +82,7 @@ const AppState = (props) => {
 
     //Login User
     const login = async (email, password) => {
-        const api = await axios.post(`${url}/user/login`,
+        const api = await axios.post(`${url}/api/user/login`,
             {
                 email, password
             },
@@ -134,7 +134,7 @@ const AppState = (props) => {
     // User Profile
     const userProfile = async () => {
 
-        const api = await axios.get(`${url}/user/profile`, {
+        const api = await axios.get(`${url}/api/user/profile`, {
             headers: {
                 "Content-Type": "Application/json",
                 "Auth" : token
@@ -151,7 +151,7 @@ const AppState = (props) => {
     const addToCart = async (productId, title, price, qty, imgSrc) => {
         //console.log("Fetching products..."); // Log when fetching products
 
-        const api = await axios.post(`${url}/cart/add`,{productId, title, price, qty, imgSrc}, {
+        const api = await axios.post(`${url}/api/cart/add`,{productId, title, price, qty, imgSrc}, {
             headers: {
                 "Content-Type": "Application/json",
                 Auth: token
@@ -180,7 +180,7 @@ const AppState = (props) => {
     const getUserCart = async () => {
         //console.log("Fetching products..."); // Log when fetching products
 
-        const api = await axios.get(`${url}/cart/user`, {
+        const api = await axios.get(`${url}/api/cart/user`, {
             headers: {
                 "Content-Type": "Application/json",
                 Auth: token
@@ -197,7 +197,7 @@ const AppState = (props) => {
     const decreaseQty = async (productId, qty) => {
         //console.log("Fetching products..."); // Log when fetching products
 
-        const api = await axios.post(`${url}/cart/--qty`,{productId, qty}, {
+        const api = await axios.post(`${url}/api/cart/--qty`,{productId, qty}, {
             headers: {
                 "Content-Type": "Application/json",
                 Auth: token
@@ -226,7 +226,7 @@ const AppState = (props) => {
     const removeFromCart = async (productId) => {
         //console.log("Fetching products..."); // Log when fetching products
 
-        const api = await axios.delete(`${url}/cart/remove/${productId}`, {
+        const api = await axios.delete(`${url}/api/cart/remove/${productId}`, {
             headers: {
                 "Content-Type": "Application/json",
                 Auth: token
@@ -255,7 +255,7 @@ const AppState = (props) => {
     const clearCart = async () => {
         //console.log("Fetching products..."); // Log when fetching products
 
-        const api = await axios.delete(`${url}/cart/clear`, {
+        const api = await axios.delete(`${url}/api/cart/clear`, {
             headers: {
                 "Content-Type": "Application/json",
                 Auth: token
@@ -284,7 +284,7 @@ const AppState = (props) => {
     const shippingAddress = async (fullName, address, city, state, country, pincode, phoneNumber) => {
         //console.log("Fetching products..."); // Log when fetching products
 
-        const api = await axios.post(`${url}/address/add`,{fullName, address, city, state, country, pincode, phoneNumber}, {
+        const api = await axios.post(`${url}/api/address/add`,{fullName, address, city, state, country, pincode, phoneNumber}, {
             headers: {
                 "Content-Type": "Application/json",
                 Auth: token
@@ -312,7 +312,7 @@ const AppState = (props) => {
 
     //Get User Latest address
     const getAddress = async () => {
-        const api = await axios.get(`${url}/address/get`, {
+        const api = await axios.get(`${url}/api/address/get`, {
             headers: {
                 "Content-Type": "Application/json",
                 Auth: token
@@ -327,7 +327,7 @@ const AppState = (props) => {
 
     // get User Order
     const getUserOrder = async () => {
-        const api = await axios.get(`${url}/payment/userorder`, {
+        const api = await axios.get(`${url}/api/payment/userorder`, {
             headers: {
                 "Content-Type": "Application/json",
                 Auth: token
