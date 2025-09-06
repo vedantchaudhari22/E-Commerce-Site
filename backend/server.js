@@ -11,8 +11,9 @@ import cors from 'cors';
 
 const app = express();
 
-app.use(bodyParser.json())
+//app.use(bodyParser.json())
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
   origin:"https://e-commerce-site-frontend-ttiw.onrender.com",
