@@ -24,7 +24,7 @@ const AppState = (props) => {
 
             const api = await axios.get(`${url}/api/product/all`, {
                 headers: {
-                    "Content-Type": "Application/json"
+                    "Content-Type": "application/json"
                 },
                 withCredentials: true
             })
@@ -60,7 +60,7 @@ const AppState = (props) => {
             },
             {
                 headers: {
-                    "Content-Type": "Application/json"
+                    "Content-Type": "application/json"
                 },
                 withCredentials: true
             })
@@ -88,7 +88,7 @@ const AppState = (props) => {
             },
             {
                 headers: {
-                    "Content-Type": "Application/json"
+                    "Content-Type": "application/json"
                 },
                 withCredentials: true
             })
@@ -136,7 +136,7 @@ const AppState = (props) => {
 
         const api = await axios.get(`${url}/api/user/profile`, {
             headers: {
-                "Content-Type": "Application/json",
+                "Content-Type": "application/json",
                 "Auth" : token
             },
             withCredentials: true
@@ -153,7 +153,7 @@ const AppState = (props) => {
 
         const api = await axios.post(`${url}/api/cart/add`,{productId, title, price, qty, imgSrc}, {
             headers: {
-                "Content-Type": "Application/json",
+                "Content-Type": "application/json",
                 Auth: token
             },
             withCredentials: true
@@ -182,7 +182,7 @@ const AppState = (props) => {
 
         const api = await axios.get(`${url}/api/cart/user`, {
             headers: {
-                "Content-Type": "Application/json",
+                "Content-Type": "application/json",
                 Auth: token
             },
             withCredentials: true
@@ -199,7 +199,7 @@ const AppState = (props) => {
 
         const api = await axios.post(`${url}/api/cart/--qty`,{productId, qty}, {
             headers: {
-                "Content-Type": "Application/json",
+                "Content-Type": "application/json",
                 Auth: token
             },
             withCredentials: true
@@ -228,7 +228,7 @@ const AppState = (props) => {
 
         const api = await axios.delete(`${url}/api/cart/remove/${productId}`, {
             headers: {
-                "Content-Type": "Application/json",
+                "Content-Type": "application/json",
                 Auth: token
             },
             withCredentials: true
@@ -257,7 +257,7 @@ const AppState = (props) => {
 
         const api = await axios.delete(`${url}/api/cart/clear`, {
             headers: {
-                "Content-Type": "Application/json",
+                "Content-Type": "application/json",
                 Auth: token
             },
             withCredentials: true
@@ -286,7 +286,7 @@ const AppState = (props) => {
 
         const api = await axios.post(`${url}/api/address/add`,{fullName, address, city, state, country, pincode, phoneNumber}, {
             headers: {
-                "Content-Type": "Application/json",
+                "Content-Type": "application/json",
                 Auth: token
             },
             withCredentials: true
@@ -314,7 +314,7 @@ const AppState = (props) => {
     const getAddress = async () => {
         const api = await axios.get(`${url}/api/address/get`, {
             headers: {
-                "Content-Type": "Application/json",
+                "Content-Type": "application/json",
                 Auth: token
             },
             withCredentials: true
@@ -329,7 +329,7 @@ const AppState = (props) => {
     const getUserOrder = async () => {
         const api = await axios.get(`${url}/api/payment/userorder`, {
             headers: {
-                "Content-Type": "Application/json",
+                "Content-Type": "application/json",
                 Auth: token
             },
             withCredentials: true
