@@ -25,7 +25,7 @@ const Checkout = () => {
 
   const handlePayment = async () => {
     try {
-      const orderRepons = await axios.post(`${url}/payment/checkout`, {
+      const orderRepons = await axios.post(`${url}/api/payment/checkout`, {
         amount: price,
         qty: qty,
         cartItems: cart?.items,
@@ -54,7 +54,7 @@ const Checkout = () => {
           };
 
           const api = await axios.post(
-            `${url}/payment/verify-payment`,
+            `${url}/api/payment/verify-payment`,
             paymentData
           );
 
