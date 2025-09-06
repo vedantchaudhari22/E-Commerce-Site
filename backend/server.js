@@ -21,10 +21,18 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-  origin:allowedOrigins,
-  methods:[ "GET","POST","PUT","DELETE"],
-  credentials:true
-}))
+  origin: (origin, callback) => {
+    // allow requests with no origin (like mobile apps, curl, etc.)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 
 // // home testing route
 app.get('/',(req,res)=>res.json({messge:'This is home route'}))
